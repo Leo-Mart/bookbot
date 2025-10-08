@@ -13,3 +13,21 @@ def count_characters(text):
       characters[lowercase_char] = 1
 
   return characters
+
+def sort_dict(dict):
+  def sort_on(items):
+    return items["num"]
+  
+  list = []
+  new_dict = {}
+  for item in dict:
+    if item.isalpha() == False:
+      continue
+    new_dict = {"char": item, "num": dict[item]}
+    list.append(new_dict)
+
+  list.sort(reverse=True, key=sort_on)
+
+  return list
+
+  
